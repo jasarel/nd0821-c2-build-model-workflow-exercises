@@ -26,6 +26,17 @@ def go(config: DictConfig):
         },
     )
 
+    
+    _ = mlflow.run(
+        os.path.join(root_path, "process_data"),
+        "main",
+        parameters={
+            "input_artifact": "iris.csv:latest",
+            "artifact_name": "cleaned_data.csv",
+            "artifact_type": "clean_data",
+            "artifact_description": "Data after processing"
+        }
+    )
     ##################
     # Your code here: use the artifact we created in the previous step as input for the `process_data` step
     # and produce a new artifact called "cleaned_data".
