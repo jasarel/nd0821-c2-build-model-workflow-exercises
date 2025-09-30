@@ -32,10 +32,21 @@ def go(args):
     df['text_feature'] = df['title'] + ' ' + df['song_name']
 
     # Save resulting artifact 
-    filename = "preprocesses_data.csv"
-    df.to_csv(filename)
-    pass
+    outfile = args.artifact_name
+    df.to_csv(outfile)
 
+    # Creating the artifact 
+    artifact = wandb.Artifact(
+        name=args.artifact_name,
+        type=args.artifact_type,
+        description=args.artifact_description
+    )
+
+    # Add artifact to W&B
+    artifact.add_file(outfile)
+
+    run.log_artifact(artifact)
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
