@@ -3,6 +3,8 @@ import argparse
 import logging
 import pandas as pd
 import wandb
+from pandas import read_parquet
+
 
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
