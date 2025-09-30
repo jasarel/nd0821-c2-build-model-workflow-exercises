@@ -35,7 +35,7 @@ def go(args):
         df,
         test_size=args.test_size,
         random_state=args.random_state,
-        stratify=df[args.stratify] if args.startify != 'null' else None
+        stratify=df[args.stratify] if args.stratify != 'null' else None
     )
     # USE train_test_split here to split df according to the provided args.test_size
 
