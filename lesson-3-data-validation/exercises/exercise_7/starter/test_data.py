@@ -67,6 +67,9 @@ def test_class_names(data):
         "hardstyle",
     ]
 
+
+    assert data['genre'].isin(known_classes).all()
+
     # YOUR CODE HERE: implement a test that checks the "genre" column to make sure
     # that the class names are legal
     # HINT: you can use the .isin method of pandas, and .all to check that the condition
