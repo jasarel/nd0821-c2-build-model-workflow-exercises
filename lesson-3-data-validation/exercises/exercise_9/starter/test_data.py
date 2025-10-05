@@ -25,6 +25,8 @@ def test_kolmogorov_smirnov(data, ks_alpha):  # TODO: update x and y here.
     # Column with Nan values (Getting imputted)
     sample1['loudness'].fillna(sample1['loudness'].mean(), inplace=True)
 
+    sample2['loudness'].fillna(sample2['loudness'].mean(), inplace=True)
+
     for col in columns:
 
         ts, p_value = scipy.stats.ks_2samp(sample1[col], sample2[col])
