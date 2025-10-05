@@ -26,6 +26,11 @@ def test_kolmogorov_smirnov(data, ks_alpha):  # TODO: update x and y here.
 
         ts, p_value = scipy.stats.ks_2samp(sample1[col], sample2[col])
 
+
+        assert not sample1[col].isnull().any(), f"NaN values found in sample1 for column {col}"
+        assert not sample2[col].isnull().any(), f"NaN values found in sample2 for column {col}"
+
+
         # NOTE: as always, the p-value should be interpreted as the probability of
         # obtaining a test statistic (TS) equal or more extreme that the one we got
         # by chance, when the null hypothesis is true. If this probability is not
