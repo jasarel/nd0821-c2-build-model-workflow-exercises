@@ -48,3 +48,5 @@ def ks_alpha(request):
 
     # COMPLETE HERE: read the option ks_alpha from the command line,
     # and return it as a float
+    assert not sample1[col].isnull().any(), f"NaN values found in sample1 for column {col}"
+    assert not sample2[col].isnull().any(), f"NaN values found in sample2 for column {col}"
