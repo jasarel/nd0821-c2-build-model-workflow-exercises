@@ -128,7 +128,7 @@ def export_model(run, pipe, X_val, val_pred, export_artifact):
         )
         
         artifact.add_dir(temp_dir)
-        run.log_srtifact(artifact)
+        run.log_artifact(artifact)
         # Then upload the temp_dir directory as an artifact:
         # 1. create a wandb.Artifact instance called "artifact"
         # 2. add the temp directory using .add_dir
