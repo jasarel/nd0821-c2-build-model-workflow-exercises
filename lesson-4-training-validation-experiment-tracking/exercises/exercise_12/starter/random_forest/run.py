@@ -121,7 +121,7 @@ def export_model(run, pipe, X_val, val_pred, export_artifact):
         # format (mlflow.sklearn.SERIALIZATION_FORMAT_CLOUDPICKLE)
 
 
-        artifact = wandbArtifact(
+        artifact = wandb.Artifact(
             export_artifact,
             type="model_export",
             description="Random Forest Pipeline Export",
