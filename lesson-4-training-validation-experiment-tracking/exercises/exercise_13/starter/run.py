@@ -29,7 +29,12 @@ def go(args):
 
     ## Get the args.model_export artifact from W&B locally. Since this artifact contains a directory
     # and not a single file, you will have to use .download() instead of .file()
-    model_export_path = run.use_artifact(args.model_export).download() ## YOUR CODE HERE
+    model_export_path = run.use_artifact(args.model_export).download() 
+    
+    logger.info(f"Model export path: {model_export_path}")
+    
+    
+   ## YOUR CODE HERE
 
     # Load the model using mlflow.sklearn.load_model
     pipe = mlflow.sklearn.load_model(model_export_path) ## YOUR CODE HERE
