@@ -33,9 +33,8 @@ def go(args):
     
     logger.info(f"Model export path: {model_export_path}")
     
+    import os
     
-   import os
-
     if os.path.exists(model_export_path):
         print("Model export path exists.")
         print("Files in model export directory:", os.listdir(model_export_path))
