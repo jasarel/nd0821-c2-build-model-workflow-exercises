@@ -34,18 +34,16 @@ def go(args):
     logger.info(f"Model export path: {model_export_path}")
     
     
-   ## YOUR CODE HERE
-
-    # Load the model using mlflow.sklearn.load_model
-    pipe = mlflow.sklearn.load_model(model_export_path) ## YOUR CODE HERE
-
-    import os
+   import os
 
     if os.path.exists(model_export_path):
         print("Model export path exists.")
         print("Files in model export directory:", os.listdir(model_export_path))
     else:
-        print("Model export path does not exist.")
+        print("Model export path does not exist.")## YOUR CODE HERE
+
+    # Load the model using mlflow.sklearn.load_model
+    pipe = mlflow.sklearn.load_model(model_export_path) ## YOUR CODE HERE
 
 
     # Compute the prediction from the model using .predict_proba on the test set
